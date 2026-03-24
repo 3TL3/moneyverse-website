@@ -28,3 +28,8 @@ describe('Navbar', () => {
     expect(screen.getByRole('button', { name: /Menü öffnen/i })).toBeInTheDocument()
   })
 })
+
+  it('menu button has aria-expanded attribute', () => {
+    render(<Navbar />)
+    expect(screen.getByRole('button', { name: /Menü öffnen/i })).toHaveAttribute('aria-expanded')
+  })

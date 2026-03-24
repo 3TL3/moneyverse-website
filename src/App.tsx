@@ -55,8 +55,11 @@ export default function App() {
         <PracticalInfoSection />
         <NewsletterSection />
       </main>
-      <FooterTop />
-      <FooterBottom />
+      {/* Single <footer> landmark wrapping both footer components (WCAG landmark fix) */}
+      <footer>
+        <FooterTop />
+        <FooterBottom />
+      </footer>
     </div>
   );
 }

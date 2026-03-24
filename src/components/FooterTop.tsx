@@ -17,9 +17,9 @@ const socialLinks = [
 
 export default function FooterTop() {
   return (
-    <footer
+<div
       className="flex flex-col"
-      aria-label="Footer"
+      
       style={{ background: 'linear-gradient(to right, #0097ff, #0031ff 52%)' }}
     >
       <div className="h-px bg-[#e4e2df]" />
@@ -74,6 +74,6 @@ export default function FooterTop() {
           </ul>
         </nav>
       </div>
-    </footer>
+</div>
   );
 }
