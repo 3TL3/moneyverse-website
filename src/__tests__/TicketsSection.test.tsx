@@ -8,14 +8,13 @@ describe('TicketsSection', () => {
     expect(screen.getByRole('heading', { name: /tickets/i })).toBeInTheDocument()
   })
 
-  it('renders the ticket purchase link', () => {
+  it('renders the ticket reservation link', () => {
     render(<TicketsSection />)
-    expect(screen.getByRole('link', { name: /jetzt tickets kaufen/i })).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: /jetzt tickets reservieren/i })).toBeInTheDocument()
   })
 
-  it('renders ticket category images', () => {
+  it('renders description about free entry', () => {
     render(<TicketsSection />)
-    const images = screen.getAllByRole('img')
-    expect(images.length).toBeGreaterThanOrEqual(2)
+    expect(screen.getByText(/kostenlos/i)).toBeInTheDocument()
   })
 })

@@ -10,8 +10,8 @@ describe('CtaTextSection', () => {
     )
   })
 
-  it('renders the subtitle text', () => {
+  it('renders the subtitle text about the exhibition', () => {
     render(<CtaTextSection />)
-    expect(screen.getByText(/einzigartigen/i)).toBeInTheDocument()
+    expect(screen.getByText(/facettenreiche Thema Geld/i)).toBeInTheDocument()
   })
 })

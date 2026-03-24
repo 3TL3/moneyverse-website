@@ -8,17 +8,19 @@ describe('PracticalInfoSection', () => {
     expect(screen.getByRole('heading', { name: /praktische infos/i })).toBeInTheDocument()
   })
 
-  it('renders opening hours label', () => {
+  it('renders Eintritt row', () => {
     render(<PracticalInfoSection />)
-    expect(screen.getByText(/öffnungszeiten/i)).toBeInTheDocument()
+    expect(screen.getByText('Eintritt')).toBeInTheDocument()
+    expect(screen.getByText('Kostenlos')).toBeInTheDocument()
   })
 
-  it('renders directions label', () => {
+  it('renders Standort row', () => {
     render(<PracticalInfoSection />)
-    expect(screen.getByText(/anfahrt/i)).toBeInTheDocument()
+    expect(screen.getByText('Standort')).toBeInTheDocument()
+    expect(screen.getAllByText(/Kaiserhaus/i).length).toBeGreaterThan(0)
   })
 
-  it('renders more info link', () => {
+  it('renders info link', () => {
     render(<PracticalInfoSection />)
     expect(screen.getByRole('link', { name: /zu den infos/i })).toBeInTheDocument()
   })

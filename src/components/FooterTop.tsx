@@ -1,62 +1,78 @@
-interface FooterNavColumn {
-  heading: string;
-  links: string[];
-}
+// Figma node: Section/Footer Top (0:682)
+const instagramIcon = "https://www.figma.com/api/mcp/asset/a37a9815-209a-4538-a2b0-a8d87df5806c";
+const linkedinIcon = "https://www.figma.com/api/mcp/asset/2e798bf6-d5af-4f13-812f-caca73fbde83";
+const tiktokIcon = "https://www.figma.com/api/mcp/asset/7b8530f7-861a-4c3e-a16f-856c3dab8d09";
+const font = "'TT Hoves Pro Trial', Arial, sans-serif";
 
-const footerNav: FooterNavColumn[] = [
-  {
-    heading: 'Besuch',
-    links: ['Öffnungszeiten', 'Anfahrt', 'Barrierefreiheit', 'Shop'],
-  },
-  {
-    heading: 'Schule & Bildung',
-    links: ['Schulklassen', 'Führungen', 'Materialien', 'Anmeldung'],
-  },
-  {
-    heading: 'Entdecken',
-    links: ['Ausstellungen', 'Thementouren', 'Events', 'Blog'],
-  },
-  {
-    heading: 'Museum',
-    links: ['Über uns', 'Team', 'Presse', 'Karriere'],
-  },
+const linkColumns = [
+  { links: ['Medien', 'Offene Stellen', 'News & Stories'] },
+  { links: ['Schulen und Gruppen', 'Praktische Informationen', 'Barrierefreiheit'] },
+];
+
+const socialLinks = [
+  { label: 'Instagram', icon: instagramIcon, href: '#' },
+  { label: 'LinkedIn', icon: linkedinIcon, href: '#' },
+  { label: 'TikTok', icon: tiktokIcon, href: '#' },
 ];
 
 export default function FooterTop() {
   return (
     <footer
-      className="py-16 px-8 md:px-16"
-      style={{ backgroundColor: '#0A0A1A' }}
-      aria-label="Footer Navigation"
+      className="flex flex-col"
+      aria-label="Footer"
+      style={{ background: 'linear-gradient(to right, #0097ff, #0031ff 52%)' }}
     >
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-10">
-        {/* Address */}
-        <address className="not-italic text-white opacity-70 text-sm leading-relaxed md:col-span-1">
-          <p className="font-semibold text-white opacity-100 mb-2">MoneyVerse</p>
-          <p>Museumstrasse 14/16</p>
-          <p>3011 Bern</p>
-          <p className="mt-3">+41 31 555 00 00</p>
-          <p>info@moneyverse.ch</p>
+      <div className="h-px bg-[#e4e2df]" />
+      <div className="flex items-center justify-between px-20 py-20">
+        {/* Left: contact info */}
+        <address className="not-italic flex flex-col gap-4 text-white" style={{ width: '427px' }}>
+          <div className="flex flex-col gap-1 text-[19px] font-medium leading-[1.4]" style={{ fontFamily: font }}>
+            <p>Kaiserhaus, Musterstrasse 12,  3007, Bern</p>
+            <div className="flex gap-4">
+              <a href="mailto:info@moneyverse.ch" className="hover:opacity-70 transition-opacity">info@moneyverse.ch</a>
+              <a href="tel:+41787787848" className="hover:opacity-70 transition-opacity">+41 78 778 78 48</a>
+            </div>
+          </div>
+          <p className="text-[17px] leading-[1.45]" style={{ fontFamily: font }}>
+            Das Moneyverse ist eine Initiative der Schweizerischen Nationalbank (SNB) in Zusammenarbeit
+            mit dem Bernischen Historischen Museum.
+          </p>
         </address>
 
-        {/* Nav columns */}
-        {footerNav.map((col) => (
-          <nav key={col.heading} aria-label={col.heading}>
-            <h3 className="text-white font-semibold text-sm mb-4">{col.heading}</h3>
-            <ul className="flex flex-col gap-2">
-              {col.links.map((link) => (
+        {/* Right: link columns + social */}
+        <nav className="flex gap-12" aria-label="Footer Navigation">
+          {linkColumns.map((col, i) => (
+            <ul key={i} className="flex flex-col gap-3">
+              {col.links.map(link => (
                 <li key={link}>
                   <a
                     href="#"
-                    className="text-white opacity-60 text-sm hover:opacity-100 transition-opacity"
+                    className="text-[16px] font-semibold text-white leading-[1.5] whitespace-nowrap hover:opacity-70 transition-opacity"
+                    style={{ fontFamily: font }}
                   >
                     {link}
                   </a>
                 </li>
               ))}
             </ul>
-          </nav>
-        ))}
+          ))}
+
+          <ul className="flex flex-col gap-3">
+            {socialLinks.map(item => (
+              <li key={item.label}>
+                <a
+                  href={item.href}
+                  className="flex items-center gap-2 text-[16px] font-semibold text-white leading-[1.5] hover:opacity-70 transition-opacity"
+                  style={{ fontFamily: font }}
+                  aria-label={item.label}
+                >
+                  <img src={item.icon} alt="" className="w-5 h-5" />
+                  {item.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
       </div>
     </footer>
   );

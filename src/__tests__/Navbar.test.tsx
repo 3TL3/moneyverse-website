@@ -3,20 +3,28 @@ import { describe, it, expect } from 'vitest'
 import Navbar from '../components/Navbar'
 
 describe('Navbar', () => {
-  it('renders the MoneyVerse logo link', () => {
+  it('renders the MoneyVerse logo image', () => {
     render(<Navbar />)
-    expect(screen.getByText('MoneyVerse')).toBeInTheDocument()
+    expect(screen.getByAltText('MoneyVerse')).toBeInTheDocument()
   })
 
-  it('renders navigation links', () => {
+  it('renders opening hours text', () => {
     render(<Navbar />)
-    expect(screen.getByText('Besuch')).toBeInTheDocument()
-    expect(screen.getByText('Ausstellung')).toBeInTheDocument()
-    expect(screen.getByText('Entdecken')).toBeInTheDocument()
+    expect(screen.getByText(/Heute offen/i)).toBeInTheDocument()
   })
 
-  it('renders tickets button', () => {
+  it('renders Barrierefreiheit link', () => {
     render(<Navbar />)
-    expect(screen.getByRole('button', { name: /tickets/i })).toBeInTheDocument()
+    expect(screen.getByText('Barrierefreiheit')).toBeInTheDocument()
+  })
+
+  it('renders Tickets navigation link', () => {
+    render(<Navbar />)
+    expect(screen.getByText('Tickets')).toBeInTheDocument()
+  })
+
+  it('renders menu button', () => {
+    render(<Navbar />)
+    expect(screen.getByRole('button', { name: /Menü öffnen/i })).toBeInTheDocument()
   })
 })

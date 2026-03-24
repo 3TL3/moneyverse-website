@@ -3,9 +3,9 @@ import { describe, it, expect } from 'vitest'
 import App from '../App'
 
 describe('App', () => {
-  it('renders the navigation', () => {
+  it('renders the navigation logo', () => {
     render(<App />)
-    expect(screen.getByRole('link', { name: 'MoneyVerse' })).toBeInTheDocument()
+    expect(screen.getByAltText('MoneyVerse')).toBeInTheDocument()
   })
 
   it('renders the hero heading', () => {
@@ -20,7 +20,7 @@ describe('App', () => {
     expect(screen.getByRole('heading', { name: 'Schulklassen' })).toBeInTheDocument()
   })
 
-  it('renders footer with MONEYVERSE logo', () => {
+  it('renders footer with MONEYVERSE logo text', () => {
     render(<App />)
     expect(screen.getByText('MONEYVERSE')).toBeInTheDocument()
   })

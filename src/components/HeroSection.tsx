@@ -1,51 +1,69 @@
+// Figma node: Hero/Template 1 (0:674)
+// Assets expire in 7 days — replace with permanent assets for production
+const heroBg = "https://www.figma.com/api/mcp/asset/c66b30c5-18e7-4f73-871f-6e2b3ff6c456";
+
 export default function HeroSection() {
   return (
     <section
-      className="relative min-h-screen flex items-end pb-20 overflow-hidden"
-      style={{ backgroundColor: '#05050F' }}
+      className="relative flex flex-col justify-end overflow-hidden"
+      style={{ height: '860px' }}
       aria-labelledby="hero-heading"
     >
-      {/* Background image overlay */}
-      <div
-        className="absolute inset-0 bg-cover bg-center opacity-50"
-        style={{
-          backgroundImage: 'url(https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=1440&q=80)',
-        }}
+      {/* Background photo */}
+      <img
+        src={heroBg}
+        alt=""
         role="presentation"
-      />
-
-      {/* Orange geometric accent */}
-      <div
-        className="absolute top-0 right-0 w-64 h-64 opacity-80"
-        style={{
-          background: '#E87C3E',
-          clipPath: 'polygon(100% 0, 100% 100%, 0 0)',
-        }}
-        aria-hidden="true"
+        className="absolute inset-0 w-full h-full object-cover"
       />
 
       {/* Blue gradient overlay */}
       <div
         className="absolute inset-0"
-        style={{
-          background: 'linear-gradient(to top, rgba(0,85,255,0.6) 0%, transparent 60%)',
-        }}
         aria-hidden="true"
+        style={{
+          background: 'linear-gradient(191deg, rgba(0,49,255,0) 38%, rgb(0,49,255) 76%)',
+        }}
       />
 
-      <div className="relative z-10 px-8 md:px-16 max-w-7xl">
-        <p className="text-white text-sm mb-4 opacity-80">MoneyVerse / Themendetail</p>
+      {/* Decorative color stripes */}
+      <div className="absolute top-[86px] left-0 right-0 h-[470px] pointer-events-none" aria-hidden="true">
+        <div className="absolute top-0 left-0 w-[624px] h-[94px]"
+          style={{ background: 'linear-gradient(to right, #e88f6e, rgba(232,143,110,0))' }} />
+        <div className="absolute top-[94px] left-0 flex">
+          <div className="w-[201px] h-[94px]"
+            style={{ background: 'linear-gradient(to right, rgba(0,49,255,0), #0031ff)' }} />
+          <div className="w-[201px] h-[94px]"
+            style={{ background: 'linear-gradient(to right, rgba(0,49,255,0), #0031ff)' }} />
+        </div>
+        <div className="absolute top-[188px] left-0 w-[252px] h-[94px] bg-[#e88f6e]" />
+        <div className="absolute top-[94px] right-0 w-[432px] h-[94px]"
+          style={{ background: 'linear-gradient(to left, #e88f6e, rgba(232,143,110,0))' }} />
+        <div className="absolute top-[282px] right-0 w-[344px] h-[94px]"
+          style={{ background: 'linear-gradient(to right, rgba(0,0,141,0), #00008d)' }} />
+        <div className="absolute top-[376px] left-0 right-0 h-[94px]"
+          style={{ background: 'linear-gradient(to right, #0031ff, rgba(0,49,255,0))' }} />
+      </div>
+
+      {/* Content */}
+      <div className="relative z-10 px-20 pb-20 flex flex-col gap-10 w-full">
         <h1
           id="hero-heading"
-          className="text-white font-bold leading-tight"
-          style={{ fontSize: 'clamp(2.5rem, 6vw, 5rem)' }}
+          className="text-white font-medium leading-none"
+          style={{ fontSize: '120px', fontFamily: "'TT Hoves Pro Trial', Arial, sans-serif", lineHeight: 0.9 }}
         >
-          Erleben und entdecken
+          <span className="block">Erleben und</span>
+          <span className="block">entdecken</span>
         </h1>
-        <p className="text-white mt-4 max-w-lg opacity-90 text-base leading-relaxed">
-          Taucht ein in das faszinierende Universum des Geldes — von der Entstehung
-          bis zur digitalen Zukunft.
-        </p>
+        <div className="flex justify-end">
+          <p
+            className="text-white text-[18px] leading-relaxed"
+            style={{ width: '434px', fontFamily: "'TT Hoves Pro Trial', Arial, sans-serif" }}
+          >
+            Das Moneyverse ist ein neuer Erlebnisort im Kaiserhaus in Bern, direkt neben dem Bundesplatz,
+            in dem das facettenreiche Thema Geld mit interaktiven und multimedialen Formaten erlebbar wird.
+          </p>
+        </div>
       </div>
     </section>
   );
