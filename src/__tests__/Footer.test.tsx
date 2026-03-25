@@ -23,9 +23,9 @@ describe('FooterTop', () => {
 })
 
 describe('FooterBottom', () => {
-  it('renders the MONEYVERSE logo text', () => {
+  it('renders the MONEYVERSE logo', () => {
     render(<FooterBottom />)
-    expect(screen.getByText('MONEYVERSE')).toBeInTheDocument()
+    expect(screen.getByRole('img', { name: 'MONEYVERSE' })).toBeInTheDocument()
   })
 
   it('renders legal links', () => {

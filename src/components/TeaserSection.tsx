@@ -49,7 +49,7 @@ export default function TeaserSection({
    *   order-3 → Text + Button (Heading auf md+ sichtbar, auf mobile versteckt)
    */
   return (
-    <section className="flex flex-col md:flex-row items-stretch px-5 md:px-10 lg:px-20">
+    <section className="flex flex-col md:flex-row items-start px-5 md:px-10 lg:px-20">
 
       {/* Titel — mobile only (aria-hidden da das semantische h2 im Textblock steht) */}
       <h2
@@ -65,7 +65,7 @@ export default function TeaserSection({
           'relative overflow-hidden',
           'order-2',
           'w-full aspect-square',
-          'md:aspect-auto md:self-stretch md:w-1/2',
+          'md:w-1/2',
           'lg:w-[585px] lg:h-[585px] lg:shrink-0 lg:self-auto',
           imageLeft ? 'md:order-1' : 'md:order-2',
         ].join(' ')}

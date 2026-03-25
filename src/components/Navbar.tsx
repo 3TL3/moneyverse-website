@@ -17,26 +17,48 @@ import { useState } from 'react';
 
 /** MoneyVerse logo — exact Figma dimensions: 127.892 × 42.559px. */
 const logoSrc = "https://www.figma.com/api/mcp/asset/82357f36-f713-4341-ab5f-64d156983578";
-/** Clock icon used in the opening-hours badge. */
-const clockIconPath = "https://www.figma.com/api/mcp/asset/7145b8f4-988d-4e21-b408-5beeeb579ac6";
-/** Wheelchair / accessibility icon. */
-const barrierIconPath = "https://www.figma.com/api/mcp/asset/5961d56f-e28d-470e-8659-38958b7d50cf";
-/** Ticket icon used in the tickets link. */
-const ticketIconPath = "https://www.figma.com/api/mcp/asset/4902903b-b064-46a0-be9c-7cca5f4cab5c";
+
+/** Inline clock icon (white, 20×20). */
+function ClockIcon() {
+  return (
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+      <circle cx="10" cy="10" r="8" stroke="white" strokeWidth="1.5"/>
+      <path d="M10 6v4l2.5 2" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+  );
+}
+
+/** Inline wheelchair / accessibility icon (white, 20×20). */
+function BarrierIcon() {
+  return (
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+      <circle cx="10" cy="3" r="1.5" fill="white"/>
+      <path d="M10 5v4.5H7L5.5 14h7L14 10h2" stroke="white" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/>
+      <circle cx="7.5" cy="16" r="2" stroke="white" strokeWidth="1.4"/>
+    </svg>
+  );
+}
+
+/** Inline ticket icon (white, 20×20). */
+function TicketIcon() {
+  return (
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+      <path d="M2 8a1 1 0 011-1h14a1 1 0 011 1v1.5a2 2 0 010 3V14a1 1 0 01-1 1H3a1 1 0 01-1-1v-1.5a2 2 0 010-3V8z" stroke="white" strokeWidth="1.4" strokeLinejoin="round"/>
+    </svg>
+  );
+}
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <header
-      className="absolute top-0 left-0 right-0 z-50 flex items-center justify-between px-5 py-4 md:px-8 md:py-5"
+      className="absolute top-0 left-0 right-0 z-50 flex items-center max-lg:justify-end lg:justify-between px-5 py-4 md:px-8 md:py-5"
       style={{ backdropFilter: 'blur(7px)', backgroundColor: 'rgba(30,30,30,0.19)' }}
     >
       {/* Left: opening hours — desktop only (lg+) */}
       <div className="max-lg:hidden flex items-center gap-2 w-[352px]">
-        <div className="relative shrink-0 size-[20px] overflow-clip">
-          <img src={clockIconPath} alt="" className="absolute inset-0 w-full h-full" />
-        </div>
+        <ClockIcon />
         <span className="text-white text-[16px] font-semibold leading-[1.5] whitespace-nowrap">
           Heute offen 10 - 17 Uhr
         </span>
@@ -65,18 +87,14 @@ export default function Navbar() {
           href="#barrierefreiheit"
           className="max-lg:hidden flex items-center gap-2 text-white text-[16px] font-semibold leading-[1.5] hover:opacity-70 transition-opacity"
         >
-          <div className="relative shrink-0 size-[20px] overflow-clip">
-            <img src={barrierIconPath} alt="" className="absolute inset-0 w-full h-full" />
-          </div>
+          <BarrierIcon />
           Barrierefreiheit
         </a>
         <a
           href="#tickets"
           className="max-lg:hidden flex items-center gap-2 text-white text-[16px] font-semibold leading-[1.5] hover:opacity-70 transition-opacity"
         >
-          <div className="relative shrink-0 size-[20px]">
-            <img src={ticketIconPath} alt="" className="absolute inset-0 w-full h-full" />
-          </div>
+          <TicketIcon />
           Tickets
         </a>
         {/* Menu button: white circle, blue lines — from Figma Button component */}

@@ -48,20 +48,23 @@ export default function TicketsSection() {
         <p className="text-[15px] md:text-[17px] lg:text-[19px] leading-[1.45]">
           Ob als Einzelbesucher:in, Gruppe oder Schulklasse – die Angebote des Moneyverse sind für alle kostenlos. Wir freuen uns auf deinen Besuch!
         </p>
-        {/* Figma Button: white pill, dark text, blue arrow circle */}
+        {/* Figma Button: white pill, dark text, blue arrow circle with slide animation */}
         <a
           href="#tickets-reservieren"
-          className="inline-flex items-center gap-3 bg-white rounded-[120px] pl-6 pr-2 py-2 hover:opacity-90 transition-opacity"
+          className="group inline-flex items-center gap-3 bg-white rounded-[120px] pl-6 pr-2 py-2 transition-opacity hover:opacity-90"
         >
           <span className="text-[16px] font-medium text-[#1e1e1e] whitespace-nowrap leading-[0.9]">
             Jetzt Tickets reservieren
           </span>
           <span
-            className="flex items-center justify-center rounded-full shrink-0 size-[38px]"
+            className="relative flex items-center justify-center rounded-full shrink-0 size-[38px] overflow-hidden"
             style={{ backgroundColor: '#0031ff' }}
             aria-hidden="true"
           >
-            <svg width="15" height="11" viewBox="0 0 15 11" fill="none">
+            <svg className="absolute transition-transform duration-300 ease-in-out group-hover:translate-x-full" width="15" height="11" viewBox="0 0 15 11" fill="none">
+              <path d="M0 5.5h13M9 1l5 4.5L9 10" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+            <svg className="absolute -translate-x-full transition-transform duration-300 ease-in-out group-hover:translate-x-0" width="15" height="11" viewBox="0 0 15 11" fill="none">
               <path d="M0 5.5h13M9 1l5 4.5L9 10" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
           </span>

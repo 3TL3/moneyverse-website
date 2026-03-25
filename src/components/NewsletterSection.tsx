@@ -91,15 +91,18 @@ export default function NewsletterSection() {
               {/* Submit — Figma Textbutton: text + blue arrow circle */}
               <button
                 type="submit"
-                className="inline-flex items-center gap-4 text-white text-[16px] font-medium leading-[0.9] hover:opacity-70 transition-opacity w-fit"
+                className="group inline-flex items-center gap-4 text-white text-[16px] font-medium leading-[0.9] hover:opacity-70 transition-opacity w-fit"
               >
                 Abonnieren
                 <span
-                  className="flex items-center justify-center rounded-full shrink-0 size-[38px]"
+                  className="relative flex items-center justify-center rounded-full shrink-0 size-[38px] overflow-hidden"
                   style={{ backgroundColor: '#0031ff' }}
                   aria-hidden="true"
                 >
-                  <svg width="15" height="11" viewBox="0 0 15 11" fill="none">
+                  <svg className="absolute transition-transform duration-300 ease-in-out group-hover:translate-x-full" width="15" height="11" viewBox="0 0 15 11" fill="none">
+                    <path d="M0 5.5h13M9 1l5 4.5L9 10" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  <svg className="absolute -translate-x-full transition-transform duration-300 ease-in-out group-hover:translate-x-0" width="15" height="11" viewBox="0 0 15 11" fill="none">
                     <path d="M0 5.5h13M9 1l5 4.5L9 10" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </span>

@@ -20,8 +20,8 @@ describe('App', () => {
     expect(screen.getByRole('heading', { name: 'Schulklassen' })).toBeInTheDocument()
   })
 
-  it('renders footer with MONEYVERSE logo text', () => {
+  it('renders footer with MONEYVERSE logo', () => {
     render(<App />)
-    expect(screen.getByText('MONEYVERSE')).toBeInTheDocument()
+    expect(screen.getByRole('img', { name: 'MONEYVERSE' })).toBeInTheDocument()
   })
 })
