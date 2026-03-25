@@ -59,11 +59,16 @@ export default function HeroSection() {
       <div className="relative z-10 px-5 pb-8 md:px-10 md:pb-14 lg:px-20 lg:pb-20 flex flex-col gap-6 lg:gap-10 w-full">
         <h1
           id="hero-heading"
-          className="text-white font-medium text-[36px] md:text-[60px] lg:text-[120px]"
+          className="text-white font-medium text-[52px] md:text-[60px] lg:text-[120px]"
           style={{ fontFamily: "'TT Hoves Pro Trial', Arial, sans-serif", lineHeight: 0.9 }}
         >
-          <span className="block">Erleben und</span>
-          <span className="block">entdecken</span>
+          {/* Mobile: 3 Zeilen — "Erleben" / "und" / "entdecken" */}
+          <span className="block md:hidden">Erleben</span>
+          <span className="block md:hidden">und</span>
+          <span className="block md:hidden">entdecken</span>
+          {/* Tablet / Desktop: 2 Zeilen */}
+          <span className="hidden md:block">Erleben und</span>
+          <span className="hidden md:block">entdecken</span>
         </h1>
         <div className="flex md:justify-end">
           <p

@@ -42,8 +42,15 @@ export default function Navbar() {
         </span>
       </div>
 
-      {/* Center: logo — exact Figma dimensions 127.892 × 42.559px */}
-      <a href="#" aria-label="MoneyVerse – Startseite" className="relative shrink-0" style={{ width: '127.892px', height: '42.559px' }}>
+      {/* Center: logo — exact Figma dimensions 127.892 × 42.559px.
+          Mobile: absolutely centred in the header bar.
+          Desktop (lg+): sits in normal flow between the three zones. */}
+      <a
+        href="#"
+        aria-label="MoneyVerse – Startseite"
+        className="relative shrink-0 max-lg:absolute max-lg:left-1/2 max-lg:-translate-x-1/2"
+        style={{ width: '127.892px', height: '42.559px' }}
+      >
         <img
           src={logoSrc}
           alt="MoneyVerse"
