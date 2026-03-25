@@ -26,22 +26,22 @@ export default function ArrowButton({ label, href, textColor = '#1e1e1e' }: Arro
       <span className="text-[16px] font-medium leading-[0.9] whitespace-nowrap" style={{ color: textColor }}>
         {label}
       </span>
-      {/* Circle: overflow-hidden clips the slide animation */}
+      {/* Circle with crossfade arrow animation (matches moneyverse.ch) */}
       <span
-        className="relative flex items-center justify-center rounded-full shrink-0 size-[38px] overflow-hidden"
+        className="relative flex items-center justify-center rounded-full shrink-0 size-[38px]"
         style={{ backgroundColor: '#0031ff' }}
         aria-hidden="true"
       >
-        {/* Arrow 1: slides out to the right on hover */}
+        {/* Arrow 1: visible at rest, fades out + moves right on hover */}
         <svg
-          className="absolute transition-transform duration-300 ease-in-out group-hover:translate-x-full"
+          className="absolute transition-[opacity,transform] duration-300 ease-in-out opacity-100 translate-x-0 group-hover:opacity-0 group-hover:translate-x-2"
           width="15" height="11" viewBox="0 0 15 11" fill="none"
         >
           <path d="M0 5.5h13M9 1l5 4.5L9 10" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
-        {/* Arrow 2: slides in from the left on hover */}
+        {/* Arrow 2: hidden at rest (shifted left), fades in + slides to centre on hover */}
         <svg
-          className="absolute -translate-x-full transition-transform duration-300 ease-in-out group-hover:translate-x-0"
+          className="absolute transition-[opacity,transform] duration-300 ease-in-out opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0"
           width="15" height="11" viewBox="0 0 15 11" fill="none"
         >
           <path d="M0 5.5h13M9 1l5 4.5L9 10" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>

@@ -62,4 +62,11 @@
   #root {
     width: 100%;
   }
+
+  /* Visible focus ring for keyboard navigation (WCAG 2.4.7) */
+  :focus-visible {
+    outline: 3px solid #0031ff;
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
 }

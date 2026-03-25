@@ -58,8 +58,15 @@ const teaserItems = [
 export default function App() {
   return (
     <div className="w-full">
+      {/* Skip-to-main link for keyboard / screen-reader users (WCAG 2.4.1) */}
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[200] focus:bg-white focus:text-[#0031ff] focus:px-4 focus:py-2 focus:rounded focus:font-medium focus:shadow-lg"
+      >
+        Zum Hauptinhalt springen
+      </a>
       <Navbar />
-      <main>
+      <main id="main-content">
         <HeroSection />
         <div className="py-10 md:py-14 lg:py-20 flex flex-col gap-10 md:gap-14 lg:gap-20 bg-white">
           {teaserItems.map((item) => (

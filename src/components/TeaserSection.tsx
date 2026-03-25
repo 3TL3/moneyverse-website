@@ -64,9 +64,7 @@ export default function TeaserSection({
         className={[
           'relative overflow-hidden',
           'order-2',
-          'w-full aspect-square',
-          'md:w-1/2',
-          'lg:w-[585px] lg:h-[585px] lg:shrink-0 lg:self-auto',
+          'w-full aspect-square md:w-1/2',
           imageLeft ? 'md:order-1' : 'md:order-2',
         ].join(' ')}
       >
@@ -95,7 +93,7 @@ export default function TeaserSection({
         className={[
           'flex flex-col gap-4 lg:gap-8 justify-center',
           'order-3 pt-5 md:pt-0',
-          'md:flex-1',
+          'md:w-1/2',
           imageLeft ? 'md:order-2 md:pl-8 lg:pl-16' : 'md:order-1 md:pr-8 lg:pr-16',
         ].join(' ')}
       >
