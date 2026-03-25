@@ -36,23 +36,33 @@ export default function HeroSection() {
         }}
       />
 
-      {/* Decorative color stripes */}
-      <div className="absolute top-[86px] left-0 right-0 h-[470px] pointer-events-none" aria-hidden="true">
-        <div className="absolute top-0 left-0 w-[624px] h-[94px]"
-          style={{ background: 'linear-gradient(to right, #e88f6e, rgba(232,143,110,0))' }} />
-        <div className="absolute top-[94px] left-0 flex">
-          <div className="w-[201px] h-[94px]"
-            style={{ background: 'linear-gradient(to right, rgba(0,49,255,0), #0031ff)' }} />
-          <div className="w-[201px] h-[94px]"
-            style={{ background: 'linear-gradient(to right, rgba(0,49,255,0), #0031ff)' }} />
+      {/* Decorative color stripes — fluid: all dimensions in vw so they scale with viewport.
+          Reference values at 1440px design width (divide px by 1440, multiply by 100 for vw). */}
+      <div
+        className="absolute left-0 right-0 pointer-events-none"
+        style={{ top: '6vw', height: '33vw' }}
+        aria-hidden="true"
+      >
+        {/* Row 1 — orange fade from left (624px → 43vw) */}
+        <div className="absolute top-0 left-0"
+          style={{ width: '43vw', height: '6.5vw', background: 'linear-gradient(to right, #e88f6e, rgba(232,143,110,0))' }} />
+        {/* Row 2 left — two blue gradient blocks side by side (201px each → 14vw each) */}
+        <div className="absolute left-0 flex" style={{ top: '6.5vw', width: '28vw', height: '6.5vw' }}>
+          <div className="flex-1 h-full" style={{ background: 'linear-gradient(to right, rgba(0,49,255,0), #0031ff)' }} />
+          <div className="flex-1 h-full" style={{ background: 'linear-gradient(to right, rgba(0,49,255,0), #0031ff)' }} />
         </div>
-        <div className="absolute top-[188px] left-0 w-[252px] h-[94px] bg-[#e88f6e]" />
-        <div className="absolute top-[94px] right-0 w-[432px] h-[94px]"
-          style={{ background: 'linear-gradient(to left, #e88f6e, rgba(232,143,110,0))' }} />
-        <div className="absolute top-[282px] right-0 w-[344px] h-[94px]"
-          style={{ background: 'linear-gradient(to right, rgba(0,0,141,0), #00008d)' }} />
-        <div className="absolute top-[376px] left-0 right-0 h-[94px]"
-          style={{ background: 'linear-gradient(to right, #0031ff, rgba(0,49,255,0))' }} />
+        {/* Row 3 — solid orange from left (252px → 17.5vw) */}
+        <div className="absolute left-0 bg-[#e88f6e]"
+          style={{ top: '13vw', width: '17.5vw', height: '6.5vw' }} />
+        {/* Row 2 right — orange fade from right (432px → 30vw) */}
+        <div className="absolute right-0"
+          style={{ top: '6.5vw', width: '30vw', height: '6.5vw', background: 'linear-gradient(to left, #e88f6e, rgba(232,143,110,0))' }} />
+        {/* Row 4 right — dark blue fade (344px → 24vw) */}
+        <div className="absolute right-0"
+          style={{ top: '19.5vw', width: '24vw', height: '6.5vw', background: 'linear-gradient(to right, rgba(0,0,141,0), #00008d)' }} />
+        {/* Row 5 — blue fade full width */}
+        <div className="absolute left-0 right-0"
+          style={{ top: '26vw', height: '6.5vw', background: 'linear-gradient(to right, #0031ff, rgba(0,49,255,0))' }} />
       </div>
 
       {/* Content */}

@@ -72,15 +72,27 @@ export default function NewsletterSection() {
                   />
                 </div>
 
-                {/* Checkbox — matches Figma Checkbox component */}
-                <label className="flex items-center gap-3 cursor-pointer">
-                  <input
-                    type="checkbox"
-                    checked={accepted}
-                    onChange={e => setAccepted(e.target.checked)}
-                    required
-                    className="w-[18px] h-[18px] rounded-sm border border-white/60 bg-white appearance-none checked:bg-white"
-                  />
+                {/* Checkbox — custom visual with accessible hidden native input */}
+                <label className="flex items-center gap-3 cursor-pointer select-none">
+                  <span
+                    className={`relative flex-shrink-0 flex items-center justify-center w-[18px] h-[18px] rounded-sm border transition-colors duration-150 ${
+                      accepted ? 'bg-white border-white' : 'bg-transparent border-white/60'
+                    }`}
+                  >
+                    {/* Native input hidden but still focusable and accessible */}
+                    <input
+                      type="checkbox"
+                      checked={accepted}
+                      onChange={e => setAccepted(e.target.checked)}
+                      required
+                      className="absolute inset-0 opacity-0 w-full h-full cursor-pointer"
+                    />
+                    {accepted && (
+                      <svg width="11" height="8" viewBox="0 0 11 8" fill="none" aria-hidden="true">
+                        <path d="M1 4l3 3 6-6" stroke="#0031ff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    )}
+                  </span>
                   <span className="text-[14px] text-white leading-[1.4]">
                     Ich akzeptiere die{' '}
                     <a href="#agb" className="underline hover:opacity-70">AGB's</a>.
@@ -98,7 +110,7 @@ export default function NewsletterSection() {
                 <span className="relative shrink-0 size-[42px]" aria-hidden="true">
                   <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center rounded-full overflow-hidden size-[38px] group-hover:size-[42px] transition-[width,height] duration-300 ease-in-out">
                     <span className="absolute inset-0" style={{ backgroundColor: '#0031ff' }} />
-                    <span className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-[400ms] delay-[200ms]" style={{ background: 'linear-gradient(90deg, #0097ff, #0031ff 52%)' }} />
+                    <span className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-[400ms] delay-[100ms]" style={{ background: 'linear-gradient(90deg, #0097ff, #0031ff 52%)' }} />
                     <svg className="relative z-10" width="15" height="11" viewBox="0 0 15 11" fill="none">
                       <path d="M0 5.5h13M9 1l5 4.5L9 10" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg>

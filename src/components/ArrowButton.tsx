@@ -39,7 +39,7 @@ export default function ArrowButton({ label, href, textColor = '#1e1e1e' }: Arro
           <span className="absolute inset-0" style={{ backgroundColor: '#0031ff' }} />
           {/* Layer 2: gradient fades in on hover (200ms delay after circle starts growing) */}
           <span
-            className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-[400ms] delay-[200ms]"
+            className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-[400ms] delay-[100ms]"
             style={{ background: 'linear-gradient(90deg, #0097ff, #0031ff 52%)' }}
           />
           {/* Arrow */}

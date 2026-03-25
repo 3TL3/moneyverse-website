@@ -60,7 +60,7 @@ export default function TicketsSection() {
           <span className="relative shrink-0 size-[42px]" aria-hidden="true">
             <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center rounded-full overflow-hidden size-[38px] group-hover:size-[42px] transition-[width,height] duration-300 ease-in-out">
               <span className="absolute inset-0" style={{ backgroundColor: '#0031ff' }} />
-              <span className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-[400ms] delay-[200ms]" style={{ background: 'linear-gradient(90deg, #0097ff, #0031ff 52%)' }} />
+              <span className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-[400ms] delay-[100ms]" style={{ background: 'linear-gradient(90deg, #0097ff, #0031ff 52%)' }} />
               <svg className="relative z-10" width="15" height="11" viewBox="0 0 15 11" fill="none">
                 <path d="M0 5.5h13M9 1l5 4.5L9 10" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
