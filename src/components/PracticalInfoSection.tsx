@@ -104,13 +104,13 @@ export default function PracticalInfoSection() {
             Zu den Infos
           </span>
           <span
-            className="relative flex items-center justify-center rounded-full shrink-0 size-[38px] bg-white"
+            className="relative flex items-center justify-center rounded-full shrink-0 size-[38px] overflow-hidden bg-white"
             aria-hidden="true"
           >
-            <svg className="absolute transition-[opacity,transform] duration-300 ease-in-out opacity-100 translate-x-0 group-hover:opacity-0 group-hover:translate-x-2" width="15" height="11" viewBox="0 0 15 11" fill="none">
+            <svg className="absolute transition-transform duration-500 ease-in-out translate-x-0 group-hover:translate-x-[150%]" width="15" height="11" viewBox="0 0 15 11" fill="none">
               <path d="M0 5.5h13M9 1l5 4.5L9 10" stroke="#0031ff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
-            <svg className="absolute transition-[opacity,transform] duration-300 ease-in-out opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0" width="15" height="11" viewBox="0 0 15 11" fill="none">
+            <svg className="absolute transition-transform duration-500 ease-in-out -translate-x-[150%] group-hover:translate-x-0" width="15" height="11" viewBox="0 0 15 11" fill="none">
               <path d="M0 5.5h13M9 1l5 4.5L9 10" stroke="#0031ff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
           </span>
