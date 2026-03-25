@@ -48,25 +48,23 @@ export default function TicketsSection() {
         <p className="text-[15px] md:text-[17px] lg:text-[19px] leading-[1.45]">
           Ob als Einzelbesucher:in, Gruppe oder Schulklasse – die Angebote des Moneyverse sind für alle kostenlos. Wir freuen uns auf deinen Besuch!
         </p>
-        {/* Figma Button: white pill, dark text, blue arrow circle with slide animation */}
+        {/* Figma Button: white pill, dark text, blue arrow circle with grow + gradient hover */}
         <a
           href="#tickets-reservieren"
-          className="group inline-flex items-center gap-3 bg-white rounded-[120px] pl-6 pr-2 py-2 transition-opacity hover:opacity-90"
+          className="group inline-flex items-center gap-3 bg-white rounded-[120px] pl-6 pr-2 py-2"
         >
           <span className="text-[16px] font-medium text-[#1e1e1e] whitespace-nowrap leading-[0.9]">
             Jetzt Tickets reservieren
           </span>
-          <span
-            className="relative flex items-center justify-center rounded-full shrink-0 size-[38px] overflow-hidden"
-            style={{ backgroundColor: '#0031ff' }}
-            aria-hidden="true"
-          >
-            <svg className="absolute transition-transform duration-500 ease-in-out translate-x-0 group-hover:translate-x-[150%]" width="15" height="11" viewBox="0 0 15 11" fill="none">
-              <path d="M0 5.5h13M9 1l5 4.5L9 10" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-            <svg className="absolute transition-transform duration-500 ease-in-out -translate-x-[150%] group-hover:translate-x-0" width="15" height="11" viewBox="0 0 15 11" fill="none">
-              <path d="M0 5.5h13M9 1l5 4.5L9 10" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
+          {/* Fixed wrapper prevents layout shift during circle growth */}
+          <span className="relative shrink-0 size-[42px]" aria-hidden="true">
+            <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center rounded-full overflow-hidden size-[38px] group-hover:size-[42px] transition-[width,height] duration-300 ease-in-out">
+              <span className="absolute inset-0" style={{ backgroundColor: '#0031ff' }} />
+              <span className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-[400ms] delay-[200ms]" style={{ background: 'linear-gradient(90deg, #0097ff, #0031ff 52%)' }} />
+              <svg className="relative z-10" width="15" height="11" viewBox="0 0 15 11" fill="none">
+                <path d="M0 5.5h13M9 1l5 4.5L9 10" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </span>
           </span>
         </a>
       </div>

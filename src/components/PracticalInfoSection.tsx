@@ -97,22 +97,19 @@ export default function PracticalInfoSection() {
         {/* Blue pill button — Figma: bg-[#0031ff] rounded-[120px] */}
         <a
           href="#infos"
-          className="group inline-flex items-center gap-3 pl-6 pr-2 py-2 rounded-[120px] w-fit hover:opacity-90 transition-opacity"
+          className="group inline-flex items-center gap-3 pl-6 pr-2 py-2 rounded-[120px] w-fit"
           style={{ backgroundColor: '#0031ff' }}
         >
           <span className="text-[16px] font-medium text-white whitespace-nowrap leading-[0.9]">
             Zu den Infos
           </span>
-          <span
-            className="relative flex items-center justify-center rounded-full shrink-0 size-[38px] overflow-hidden bg-white"
-            aria-hidden="true"
-          >
-            <svg className="absolute transition-transform duration-500 ease-in-out translate-x-0 group-hover:translate-x-[150%]" width="15" height="11" viewBox="0 0 15 11" fill="none">
-              <path d="M0 5.5h13M9 1l5 4.5L9 10" stroke="#0031ff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-            <svg className="absolute transition-transform duration-500 ease-in-out -translate-x-[150%] group-hover:translate-x-0" width="15" height="11" viewBox="0 0 15 11" fill="none">
-              <path d="M0 5.5h13M9 1l5 4.5L9 10" stroke="#0031ff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
+          {/* Fixed wrapper prevents layout shift during circle growth */}
+          <span className="relative shrink-0 size-[42px]" aria-hidden="true">
+            <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center rounded-full overflow-hidden size-[38px] group-hover:size-[42px] transition-[width,height] duration-300 ease-in-out bg-white">
+              <svg className="relative z-10" width="15" height="11" viewBox="0 0 15 11" fill="none">
+                <path d="M0 5.5h13M9 1l5 4.5L9 10" stroke="#0031ff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </span>
           </span>
         </a>
       </div>
