@@ -1,3 +1,20 @@
+/*
+ * Global stylesheet for the MoneyVerse website.
+ *
+ * Structure:
+ *  1. Tailwind CSS v4 base import
+ *  2. @font-face declarations for TT Hoves Pro Trial (Regular 400, Medium 500, DemiBold 600)
+ *     — fonts are served from /public/fonts/ (TTF format)
+ *  3. Base layer overrides: smooth scrolling, font-smoothing, box-sizing, body font
+ *
+ * Design tokens (used across components via inline styles):
+ *  --color-blue-medium : #0031ff  (primary brand blue)
+ *  --color-blue-light  : #0097ff  (gradient start / decorative stripe)
+ *  --color-blue-dark   : #00008d  (footer background / dark stripe)
+ *  --color-orange      : #e88f6e  (decorative accent stripe)
+ *  --color-grey-dark   : #1e1e1e  (headings / button text)
+ *  --color-grey-body   : #333333  (body copy)
+ */
 @import "tailwindcss";
 
 /* TT Hoves Pro Trial – local fonts */
@@ -33,6 +50,7 @@
   body {
     margin: 0;
     font-family: 'TT Hoves Pro Trial', Arial, 'Helvetica Neue', sans-serif;
+    overflow-x: hidden; /* prevent decorative stripe elements from causing horizontal scroll */
   }
 
   *,

@@ -1,9 +1,19 @@
-// Reusable arrow button matching Figma "Textbutton" pattern:
-// label text + blue circle (38px) with white SVG arrow
+/**
+ * Reusable arrow button matching the Figma "Textbutton" pattern.
+ * Renders as an anchor link with a text label and a blue circle (38px)
+ * containing a white SVG arrow — used in teaser cards and info sections.
+ */
 
+/** Props for the ArrowButton component. */
 interface ArrowButtonProps {
+  /** Visible button label text. */
   label: string;
+  /** The URL the button links to (anchor or page). */
   href: string;
+  /**
+   * Text colour for the label.
+   * @default '#1e1e1e' (dark grey, matches Figma body text)
+   */
   textColor?: string;
 }
 

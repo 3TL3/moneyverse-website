@@ -1,14 +1,18 @@
-// Figma node: Section/Ticket (0:677)
-// Pill button: white bg, dark text, blue arrow circle — matches Figma Button component
+/**
+ * Tickets section — full-width blue gradient banner promoting free admission.
+ * Figma node: Section/Ticket (0:677)
+ *
+ * Background: horizontal gradient from #0097ff (light-blue) to #0031ff (medium-blue).
+ * Layered decorative stripes (orange #e88f6e, dark-blue #00008d) mirror the hero pattern.
+ * The CTA is a white pill button with a dark label and a blue arrow circle,
+ * matching the Figma "Button" component spec.
+ */
 
 export default function TicketsSection() {
   return (
     <section
-      className="relative flex items-center justify-center overflow-hidden"
-      style={{
-        background: 'linear-gradient(to right, #0097ff, #0031ff 52%)',
-        height: '388px',
-      }}
+      className="relative flex items-center justify-center overflow-hidden min-h-[320px] md:min-h-[388px]"
+      style={{ background: 'linear-gradient(to right, #0097ff, #0031ff 52%)' }}
       aria-labelledby="tickets-heading"
     >
       {/* Decorative background pattern (from Figma Background Pattern node) */}
@@ -33,15 +37,15 @@ export default function TicketsSection() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 flex flex-col items-center gap-8 text-center text-white" style={{ width: '520px' }}>
+      <div className="relative z-10 flex flex-col items-center gap-6 lg:gap-8 text-center text-white w-full max-w-[520px] px-5 lg:px-0">
         <h2
           id="tickets-heading"
-          className="font-medium whitespace-nowrap"
-          style={{ fontSize: '55px', lineHeight: '64px' }}
+          className="font-medium text-[36px] md:text-[48px] lg:text-[55px]"
+          style={{ lineHeight: '1.15' }}
         >
           Tickets
         </h2>
-        <p className="text-[19px] leading-[1.45]">
+        <p className="text-[15px] md:text-[17px] lg:text-[19px] leading-[1.45]">
           Ob als Einzelbesucher:in, Gruppe oder Schulklasse – die Angebote des Moneyverse sind für alle kostenlos. Wir freuen uns auf deinen Besuch!
         </p>
         {/* Figma Button: white pill, dark text, blue arrow circle */}

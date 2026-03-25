@@ -1,4 +1,20 @@
-// Assets expire in 7 days — replace with permanent assets for production
+/**
+ * Root application component — assembles all page sections in order.
+ *
+ * Page structure:
+ *  <Navbar>            — translucent top navigation bar (absolute, overlays hero)
+ *  <HeroSection>       — 860px full-width opening banner
+ *  <TeaserSection × 3> — alternating image/text blocks (Ausstellung, Thementouren, Schulklassen)
+ *  <CtaTextSection>    — two-column text interlude ("Tauch ein ins Universum des Geldes")
+ *  <TicketsSection>    — blue gradient tickets CTA
+ *  <PracticalInfoSection> — photo + info table (Eintritt, Standort)
+ *  <NewsletterSection> — newsletter sign-up form
+ *  <footer>            — single WCAG landmark wrapping FooterTop + FooterBottom
+ *
+ * NOTE: Figma MCP image assets expire in 7 days. Replace all
+ * `https://www.figma.com/api/mcp/asset/...` URLs with permanent CDN assets
+ * before deploying to production.
+ */
 import Navbar from './components/Navbar';
 import HeroSection from './components/HeroSection';
 import TeaserSection from './components/TeaserSection';
@@ -45,7 +61,7 @@ export default function App() {
       <Navbar />
       <main>
         <HeroSection />
-        <div className="py-20 flex flex-col gap-20 bg-white">
+        <div className="py-10 md:py-14 lg:py-20 flex flex-col gap-10 md:gap-14 lg:gap-20 bg-white">
           {teaserItems.map((item) => (
             <TeaserSection key={item.title} {...item} />
           ))}

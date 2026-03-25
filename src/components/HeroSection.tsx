@@ -1,12 +1,22 @@
-// Figma node: Hero/Template 1 (0:674)
-// Assets expire in 7 days — replace with permanent assets for production
+/**
+ * Hero section — the full-width opening banner of the page.
+ * Figma node: Hero/Template 1 (0:674)
+ *
+ * Layout: 860px tall, photo background with a blue (#0031ff) gradient overlay
+ * and decorative colour stripes (orange #e88f6e, dark-blue #00008d) layered on top.
+ * The large headline sits at the bottom-left; the teaser text is bottom-right.
+ *
+ * NOTE: The heroBg asset URL is served by the Figma MCP server and expires after
+ * 7 days. Replace it with a permanent CDN URL before going to production.
+ */
+
+/** Background photo URL from Figma MCP asset endpoint. */
 const heroBg = "https://www.figma.com/api/mcp/asset/c66b30c5-18e7-4f73-871f-6e2b3ff6c456";
 
 export default function HeroSection() {
   return (
     <section
-      className="relative flex flex-col justify-end overflow-hidden"
-      style={{ height: '860px' }}
+      className="relative flex flex-col justify-end overflow-hidden min-h-[500px] md:min-h-[640px] lg:h-[860px]"
       aria-labelledby="hero-heading"
     >
       {/* Background photo */}
@@ -46,19 +56,19 @@ export default function HeroSection() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 px-20 pb-20 flex flex-col gap-10 w-full">
+      <div className="relative z-10 px-5 pb-8 md:px-10 md:pb-14 lg:px-20 lg:pb-20 flex flex-col gap-6 lg:gap-10 w-full">
         <h1
           id="hero-heading"
-          className="text-white font-medium leading-none"
-          style={{ fontSize: '120px', fontFamily: "'TT Hoves Pro Trial', Arial, sans-serif", lineHeight: 0.9 }}
+          className="text-white font-medium text-[36px] md:text-[60px] lg:text-[120px]"
+          style={{ fontFamily: "'TT Hoves Pro Trial', Arial, sans-serif", lineHeight: 0.9 }}
         >
           <span className="block">Erleben und</span>
           <span className="block">entdecken</span>
         </h1>
-        <div className="flex justify-end">
+        <div className="flex md:justify-end">
           <p
-            className="text-white text-[18px] leading-relaxed"
-            style={{ width: '434px', fontFamily: "'TT Hoves Pro Trial', Arial, sans-serif" }}
+            className="text-white text-[16px] md:text-[18px] leading-relaxed w-full md:w-[434px]"
+            style={{ fontFamily: "'TT Hoves Pro Trial', Arial, sans-serif" }}
           >
             Das Moneyverse ist ein neuer Erlebnisort im Kaiserhaus in Bern, direkt neben dem Bundesplatz,
             in dem das facettenreiche Thema Geld mit interaktiven und multimedialen Formaten erlebbar wird.

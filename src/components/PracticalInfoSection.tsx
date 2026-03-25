@@ -1,11 +1,28 @@
-// Figma node: Section/Image Table (0:680)
+/**
+ * Practical information section — photo left, info table right.
+ * Figma node: Section/Image Table (0:680)
+ *
+ * The table rows follow the Figma "divider-row" pattern: horizontal rules
+ * separate each row, with a small grey label above a larger medium-weight value.
+ * Optional `linkLabel` / `linkHref` fields render an underlined text link
+ * aligned to the right of the row.
+ *
+ * NOTE: museumImg is served by the Figma MCP server and expires after 7 days.
+ * Replace with a permanent CDN URL before production.
+ */
 
+/** Museum photo — Figma MCP asset (expires in 7 days). */
 const museumImg = "https://www.figma.com/api/mcp/asset/82c3d6b1-61f9-46af-974f-a62c29cd6163";
 
+/** A single row in the practical-info table. */
 interface InfoRow {
+  /** Short category label (e.g. "Eintritt"). */
   label: string;
+  /** Main value text (e.g. "Kostenlos"). */
   value: string;
+  /** Optional link label rendered right-aligned in the row. */
   linkLabel?: string;
+  /** Destination URL for the optional row link. */
   linkHref?: string;
 }
 
@@ -21,9 +38,9 @@ const infoRows: InfoRow[] = [
 
 export default function PracticalInfoSection() {
   return (
-    <section className="flex items-center gap-24 p-20 bg-white" aria-labelledby="info-heading">
+    <section className="flex flex-col lg:flex-row items-center gap-10 lg:gap-24 p-5 md:p-10 lg:p-20 bg-white" aria-labelledby="info-heading">
       {/* Photo with stripe decorations */}
-      <div className="relative shrink-0 overflow-hidden" style={{ width: '585px', height: '585px' }}>
+      <div className="relative w-full aspect-square lg:w-[585px] lg:h-[585px] lg:aspect-auto lg:shrink-0 overflow-hidden">
         <img
           src={museumImg}
           alt="Museum Kaiserhaus"
@@ -39,17 +56,17 @@ export default function PracticalInfoSection() {
       </div>
 
       {/* Info content */}
-      <div className="flex flex-col gap-12 flex-1">
+      <div className="flex flex-col gap-8 lg:gap-12 flex-1 w-full">
         <h2
           id="info-heading"
-          className="font-medium text-[#1e1e1e]"
-          style={{ fontSize: '55px', lineHeight: '64px' }}
+          className="font-medium text-[#1e1e1e] text-[28px] md:text-[40px] lg:text-[55px]"
+          style={{ lineHeight: '1.15' }}
         >
           Praktische Infos
         </h2>
 
         {/* Table — matches Figma divider-row pattern */}
-        <div className="flex flex-col" style={{ width: '599px' }}>
+        <div className="flex flex-col w-full lg:w-[599px]">
           <div className="h-px bg-[#e4e2df]" />
           {infoRows.map((row, i) => (
             <div key={row.label}>
