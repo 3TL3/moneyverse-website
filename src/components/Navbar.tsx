@@ -106,7 +106,6 @@ export default function Navbar() {
         <button
           aria-label="Menü öffnen"
           aria-expanded={menuOpen}
-          aria-controls="main-menu"
           onClick={() => setMenuOpen(o => !o)}
           className="flex items-center justify-center rounded-full shrink-0 size-[42px] md:size-[46px] bg-white"
         >

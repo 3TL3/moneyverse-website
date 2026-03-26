@@ -68,7 +68,7 @@ export default function NewsletterSection() {
                     placeholder="ihre@email.ch"
                     required
                     aria-label="E-Mail"
-                    className="bg-transparent text-white text-[17px] leading-[1.45] border-0 border-b border-[#ddd] pb-1 focus:outline-none placeholder-white/50"
+                    className="bg-transparent text-white text-[17px] leading-[1.45] border-0 border-b border-[#ddd] pb-1 focus:outline-none focus-visible:border-white placeholder-white/50"
                   />
                 </div>
 
@@ -103,12 +103,12 @@ export default function NewsletterSection() {
               {/* Submit — Figma Textbutton: text + blue arrow circle with grow + gradient hover */}
               <button
                 type="submit"
-                className="group inline-flex items-center gap-4 text-white text-[16px] font-medium leading-[0.9] w-fit"
+                className="group inline-flex items-center gap-4 text-white text-[16px] font-medium leading-[0.9] w-fit rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#0031ff]"
               >
                 Abonnieren
                 {/* Fixed wrapper prevents layout shift during circle growth */}
                 <span className="relative shrink-0 size-[42px]" aria-hidden="true">
-                  <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center rounded-full overflow-hidden size-[38px] group-hover:size-[42px] transition-[width,height] duration-300 ease-in-out">
+                  <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center rounded-full overflow-hidden size-[38px] group-hover:size-[42px] group-focus-visible:size-[42px] transition-[width,height] duration-300 ease-in-out">
                     <span className="absolute inset-0" style={{ backgroundColor: '#0031ff' }} />
                     <span className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-[400ms] delay-[100ms]" style={{ background: 'linear-gradient(90deg, #0097ff, #0031ff 52%)' }} />
                     <svg className="relative z-10" width="15" height="11" viewBox="0 0 15 11" fill="none">

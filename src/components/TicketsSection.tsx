@@ -17,23 +17,23 @@ export default function TicketsSection() {
     >
       {/* Decorative background pattern (from Figma Background Pattern node) */}
       <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
-        <div className="absolute top-0 left-0 w-[163px] h-[97px] bg-[#e88f6e]" />
-        <div className="absolute top-[97px] left-0 w-[565px] h-[97px]"
-          style={{ background: 'linear-gradient(to right, #00008d, rgba(0,0,141,0) 1.333%)' }} />
-        <div className="absolute top-[194px] left-0 flex">
-          <div className="w-[174px] h-[97px]"
+        <div className="absolute top-0 left-0 h-[97px] bg-[#e88f6e]" style={{ width: '11.3vw' }} />
+        <div className="absolute top-[97px] left-0 h-[97px]"
+          style={{ width: '39.2vw', background: 'linear-gradient(to right, #00008d, rgba(0,0,141,0) 1.333%)' }} />
+        <div className="absolute top-[194px] left-0 flex h-[97px]" style={{ width: '24.2vw' }}>
+          <div className="flex-1 h-full"
             style={{ background: 'linear-gradient(to right, rgba(232,143,110,0), #e88f6e)' }} />
-          <div className="w-[174px] h-[97px]"
+          <div className="flex-1 h-full"
             style={{ background: 'linear-gradient(to right, rgba(232,143,110,0), #e88f6e)' }} />
         </div>
         <div className="absolute top-[291px] left-0 right-0 h-[97px]"
           style={{ background: 'linear-gradient(to right, #0031ff, rgba(0,49,255,0))' }} />
-        <div className="absolute top-0 right-0 w-[432px] h-[97px]"
-          style={{ background: 'linear-gradient(to left, rgba(232,143,110,0), #e88f6e)' }} />
-        <div className="absolute top-[194px] right-0 w-[344px] h-[97px]"
-          style={{ background: 'linear-gradient(to right, rgba(0,0,141,0), #00008d)' }} />
-        <div className="absolute top-[291px] right-0 w-[426px] h-[97px]"
-          style={{ background: 'linear-gradient(to left, rgba(232,143,110,0), #e88f6e)' }} />
+        <div className="absolute top-0 right-0 h-[97px]"
+          style={{ width: '30vw', background: 'linear-gradient(to left, rgba(232,143,110,0), #e88f6e)' }} />
+        <div className="absolute top-[194px] right-0 h-[97px]"
+          style={{ width: '23.9vw', background: 'linear-gradient(to right, rgba(0,0,141,0), #00008d)' }} />
+        <div className="absolute top-[291px] right-0 h-[97px]"
+          style={{ width: '29.6vw', background: 'linear-gradient(to left, rgba(232,143,110,0), #e88f6e)' }} />
       </div>
 
       {/* Content */}
@@ -51,14 +51,14 @@ export default function TicketsSection() {
         {/* Figma Button: white pill, dark text, blue arrow circle with grow + gradient hover */}
         <a
           href="#tickets-reservieren"
-          className="group inline-flex items-center gap-3 bg-white rounded-[120px] pl-6 pr-2 py-2"
+          className="group inline-flex items-center gap-3 bg-white rounded-[120px] pl-6 pr-2 py-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#0031ff]"
         >
           <span className="text-[16px] font-medium text-[#1e1e1e] whitespace-nowrap leading-[0.9]">
             Jetzt Tickets reservieren
           </span>
           {/* Fixed wrapper prevents layout shift during circle growth */}
           <span className="relative shrink-0 size-[42px]" aria-hidden="true">
-            <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center rounded-full overflow-hidden size-[38px] group-hover:size-[42px] transition-[width,height] duration-300 ease-in-out">
+            <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center rounded-full overflow-hidden size-[38px] group-hover:size-[42px] group-focus-visible:size-[42px] transition-[width,height] duration-300 ease-in-out">
               <span className="absolute inset-0" style={{ backgroundColor: '#0031ff' }} />
               <span className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-[400ms] delay-[100ms]" style={{ background: 'linear-gradient(90deg, #0097ff, #0031ff 52%)' }} />
               <svg className="relative z-10" width="15" height="11" viewBox="0 0 15 11" fill="none">

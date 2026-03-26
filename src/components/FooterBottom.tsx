@@ -57,7 +57,7 @@ export default function FooterBottom() {
         <nav className="flex flex-wrap justify-center gap-x-6 gap-y-2 md:gap-8" aria-label="Rechtliche Links">
           <a href="#" className="hover:opacity-70 transition-opacity" aria-label="Datenschutz">Datenschutz</a>
           <a href="#" className="hover:opacity-70 transition-opacity" aria-label="Impressum">Impressum</a>
-          <a href="#" className="hover:opacity-70 transition-opacity">Cookie Einstellungen</a>
+          <a href="#" className="hover:opacity-70 transition-opacity" aria-label="Cookie Einstellungen">Cookie Einstellungen</a>
         </nav>
       </div>
     </div>

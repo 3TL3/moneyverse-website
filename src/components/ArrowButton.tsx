@@ -24,16 +24,16 @@ interface ArrowButtonProps {
 
 export default function ArrowButton({ label, href, textColor = '#1e1e1e' }: ArrowButtonProps) {
   return (
-    <a href={href} className="group inline-flex items-center gap-4">
+    <a href={href} className="group inline-flex items-center gap-4 rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0031ff] focus-visible:ring-offset-2">
       <span className="text-[16px] font-medium leading-[0.9] whitespace-nowrap" style={{ color: textColor }}>
         {label}
       </span>
 
       {/* Fixed 42×42 wrapper — holds layout space while inner circle grows */}
       <span className="relative shrink-0 size-[42px]" aria-hidden="true">
-        {/* Inner circle: 38px at rest → 42px on hover, centered via absolute */}
+        {/* Inner circle: 38px at rest → 42px on hover/focus, centered via absolute */}
         <span
-          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center rounded-full overflow-hidden size-[38px] group-hover:size-[42px] transition-[width,height] duration-300 ease-in-out"
+          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center rounded-full overflow-hidden size-[38px] group-hover:size-[42px] group-focus-visible:size-[42px] transition-[width,height] duration-300 ease-in-out"
         >
           {/* Layer 1: solid base colour */}
           <span className="absolute inset-0" style={{ backgroundColor: '#0031ff' }} />
